@@ -1,0 +1,3 @@
+//Hornet works just like the groovy programming language! This is a comment
+println "Hello Hornet!"
+assert 1+1, 2 //should print nothing!

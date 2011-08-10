@@ -1,0 +1,833 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY oboContent "http://purl.org/obo/owl/" >
+    <!ENTITY oban "http://purl.org/obo/oban/" >
+    <!ENTITY SO "http://purl.org/obo/owl/SO#" >
+    <!ENTITY obo "http://purl.org/obo/owl/obo#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY OBO_REL "http://purl.org/obo/owl/OBO_REL#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY hornet "http://www.compbio.ornl.gov/owl/hornet" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#onClass" >
+    <!ENTITY hornet2 "http://www.compbio.ornl.gov/owl/hornet#" >
+    <!ENTITY owl11 "http://www.w3.org/2006/12/owl11#onClass" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.compbio.ornl.gov/owl#"
+     xml:base="http://www.compbio.ornl.gov/owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl11="http://www.w3.org/2006/12/owl11#onClass"
+     xmlns:oboContent="http://purl.org/obo/owl/"
+     xmlns:hornet="http://www.compbio.ornl.gov/owl/hornet"
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#onClass"
+     xmlns:hornet2="&hornet;#"
+     xmlns:SO="&oboContent;SO#"
+     xmlns:obo="&oboContent;obo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:OBO_REL="&oboContent;OBO_REL#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:oban="http://purl.org/obo/oban/">
+    <owl:Ontology rdf:about="http://www.compbio.ornl.gov/owl/hornet">
+        <rdfs:label>hornet</rdfs:label>
+        <rdfs:comment xml:lang="en">Created by Daniel Quest 
+Wed July 21st 2011</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#modifiedDate -->
+
+    <owl:DatatypeProperty rdf:about="&hornet;#modifiedDate">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#AlignmentSoftware -->
+
+    <owl:Class rdf:about="&hornet;#AlignmentSoftware">
+        <rdfs:label xml:lang="en">AlignmentSoftware</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#BTAB -->
+
+    <owl:Class rdf:about="&hornet;#BTAB">
+        <rdfs:label xml:lang="en">BTABTask</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Blast"/>
+        <rdfs:comment xml:lang="en">A BTAB Task is a task that runs Blast and then converts the output into a BTAB formatted file.  (In contrast to a task that runs blast with the -m option which does not have some critical information such as the length of the sequence from the database).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#BTABFormat -->
+
+    <owl:Class rdf:about="&hornet;#BTABFormat">
+        <rdfs:label>BTABFormat</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#TabDelimitedFormats"/>
+        <rdfs:comment>Tab Blast Output</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Blast -->
+
+    <owl:Class rdf:about="&hornet;#Blast">
+        <rdfs:label xml:lang="en">Blast</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#LocalAlignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#ColumnOrientedFormats -->
+
+    <owl:Class rdf:about="&hornet;#ColumnOrientedFormats">
+        <rdfs:label>ColumnOrientedFormats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#CovarianceModel -->
+
+    <owl:Class rdf:about="&hornet;#CovarianceModel">
+        <rdfs:subClassOf rdf:resource="&hornet;#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#DataTerms -->
+
+    <owl:Class rdf:about="&hornet;#DataTerms"/>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#FastaFormat -->
+
+    <owl:Class rdf:about="&hornet;#FastaFormat">
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#FileFormats -->
+
+    <owl:Class rdf:about="&hornet;#FileFormats">
+        <rdfs:label xml:lang="en">FileFormats</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#GeneCallers -->
+
+    <owl:Class rdf:about="&hornet;#GeneCallers">
+        <rdfs:label>GeneCallers</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0001 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0001">
+        <rdfs:label xml:lang="en">anticodon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0002 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0002">
+        <rdfs:label xml:lang="en">bound_moiety</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0003 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0003">
+        <rdfs:label xml:lang="en">codon_start</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0004 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0004">
+        <rdfs:label xml:lang="en">colour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0005 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0005">
+        <rdfs:label xml:lang="en">color</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0006 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0006">
+        <rdfs:label xml:lang="en">db_xref</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0007 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0007">
+        <rdfs:label xml:lang="en">EC_number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0008 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0008">
+        <rdfs:label xml:lang="en">environmental_sample</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0009 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0009">
+        <rdfs:label xml:lang="en">evidence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0010 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0010">
+        <rdfs:label xml:lang="en">exception</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0011 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0011">
+        <rdfs:label xml:lang="en">function</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0012 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0012">
+        <rdfs:label xml:lang="en">gene</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0013 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0013">
+        <rdfs:label xml:lang="en">gene_desc</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0014 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0014">
+        <rdfs:label xml:lang="en">gene_synonym</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0015 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0015">
+        <rdfs:label xml:lang="en">inference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0016 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0016">
+        <rdfs:label xml:lang="en">insertion_seq</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0017 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0017">
+        <rdfs:label xml:lang="en">isolation_source</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0018 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0018">
+        <rdfs:label xml:lang="en">lat_lon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0019 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0019">
+        <rdfs:label xml:lang="en">mol_type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0020 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0020">
+        <rdfs:label xml:lang="en">ncRNA_class</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0021 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0021">
+        <rdfs:label xml:lang="en">note</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0022 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0022">
+        <rdfs:label xml:lang="en">organism</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0023 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0023">
+        <rdfs:label xml:lang="en">product</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0024 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0024">
+        <rdfs:label xml:lang="en">plasmid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0025 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0025">
+        <rdfs:label xml:lang="en">pseudo</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0026 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0026">
+        <rdfs:label xml:lang="en">protein_id</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0027 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0027">
+        <rdfs:label xml:lang="en">replace</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0028 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0028">
+        <rdfs:label xml:lang="en">rpt_family</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0029 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0029">
+        <rdfs:label xml:lang="en">rpt_type</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0030 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0030">
+        <rdfs:label xml:lang="en">rpt_unit_range</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0031 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0031">
+        <rdfs:label xml:lang="en">strain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0032 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0032">
+        <rdfs:label xml:lang="en">transl_except</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0033 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0033">
+        <rdfs:label xml:lang="en">transposon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0034 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0034">
+        <rdfs:label xml:lang="en">transl_table</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0035 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0035">
+        <rdfs:label xml:lang="en">translation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDC0036 -->
+
+    <owl:Class rdf:about="&hornet;#INSDC0036">
+        <rdfs:label>locus_tag</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCQualifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDCFormats -->
+
+    <owl:Class rdf:about="&hornet;#INSDCFormats">
+        <rdfs:label>INSDCFormats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDCQualifier -->
+
+    <owl:Class rdf:about="&hornet;#INSDCQualifier">
+        <rdfs:subClassOf rdf:resource="&hornet;#INSDCTerm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#INSDCTerm -->
+
+    <owl:Class rdf:about="&hornet;#INSDCTerm"/>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#InterProScan -->
+
+    <owl:Class rdf:about="&hornet;#InterProScan">
+        <rdfs:label>InterProScan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#ProfileHMM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#LocalAlignment -->
+
+    <owl:Class rdf:about="&hornet;#LocalAlignment">
+        <rdfs:label xml:lang="en">LocalAlignment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#AlignmentSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#MD5_Digest -->
+
+    <owl:Class rdf:about="&hornet;#MD5_Digest">
+        <rdfs:label>MD5_Digest</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#SoftwareTerms"/>
+        <dc:description>MD5_Digest is the result of applying the MD5 hashing algorithm to a data element</dc:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Priam -->
+
+    <owl:Class rdf:about="&hornet;#Priam">
+        <rdfs:label>Priam</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#RPSBlast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Prodigal -->
+
+    <owl:Class rdf:about="&hornet;#Prodigal">
+        <rdfs:label>Prodigal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#GeneCallers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#ProfileAlignment -->
+
+    <owl:Class rdf:about="&hornet;#ProfileAlignment">
+        <rdfs:label>ProfileAlignment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#AlignmentSoftware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#ProfileHMM -->
+
+    <owl:Class rdf:about="&hornet;#ProfileHMM">
+        <rdfs:label xml:lang="en">ProfileHMM</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#RPSBlast -->
+
+    <owl:Class rdf:about="&hornet;#RPSBlast">
+        <rdfs:label>RPSBlast</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#ProfileAlignment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#RPSBlastVSCOGS -->
+
+    <owl:Class rdf:about="&hornet;#RPSBlastVSCOGS">
+        <rdfs:label>RPSBlastVSCOGS</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#RPSBlast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Running -->
+
+    <owl:Class rdf:about="&hornet;#Running">
+        <rdfs:subClassOf rdf:resource="&hornet;#SoftwareTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#SequenceLength -->
+
+    <owl:Class rdf:about="&hornet;#SequenceLength">
+        <rdfs:label>SequenceLength</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#DataTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#SignalP -->
+
+    <owl:Class rdf:about="&hornet;#SignalP">
+        <rdfs:label xml:lang="en">SignalP</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Software"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Software -->
+
+    <owl:Class rdf:about="&hornet;#Software">
+        <rdfs:label xml:lang="en">Software</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#SoftwareTerms -->
+
+    <owl:Class rdf:about="&hornet;#SoftwareTerms">
+        <rdfs:label>SoftwareTerms</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#SourceName -->
+
+    <owl:Class rdf:about="&hornet;#SourceName">
+        <rdfs:label rdf:datatype="&rdfs;Literal">SourceName</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#DataTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#SpaceDelimitedFormats -->
+
+    <owl:Class rdf:about="&hornet;#SpaceDelimitedFormats">
+        <rdfs:label>SpaceDelimitedFormats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#TMHMM -->
+
+    <owl:Class rdf:about="&hornet;#TMHMM">
+        <rdfs:label>TMHMM</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#ProfileHMM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#TabDelimitedFormats -->
+
+    <owl:Class rdf:about="&hornet;#TabDelimitedFormats">
+        <rdfs:label>TabDelimitedFormats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#TargetName -->
+
+    <owl:Class rdf:about="&hornet;#TargetName">
+        <rdfs:label rdf:datatype="&rdfs;Literal">TargetName</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#DataTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Training -->
+
+    <owl:Class rdf:about="&hornet;#Training">
+        <rdfs:subClassOf rdf:resource="&hornet;#SoftwareTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#Workflow -->
+
+    <owl:Class rdf:about="&hornet;#Workflow">
+        <rdfs:label xml:lang="en">Workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#XMLFormats -->
+
+    <owl:Class rdf:about="&hornet;#XMLFormats">
+        <rdfs:label>XMLFormats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#FileFormats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#blast-kegg-protien -->
+
+    <owl:Class rdf:about="&hornet;#blast-kegg-protien">
+        <rdfs:label>blast-kegg-protien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#blast-protien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#blast-nr-protien -->
+
+    <owl:Class rdf:about="&hornet;#blast-nr-protien">
+        <rdfs:label>blast-nr-protien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#blast-protien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#blast-protien -->
+
+    <owl:Class rdf:about="&hornet;#blast-protien">
+        <rdfs:label xml:lang="en">blast-protien</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#Blast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#blast-sptr -->
+
+    <owl:Class rdf:about="&hornet;#blast-sptr">
+        <rdfs:label>blast-sptr</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#blast-protien"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#parameter -->
+
+    <owl:Class rdf:about="&hornet;#parameter">
+        <rdfs:label>parameter</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#SoftwareTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#rnammer -->
+
+    <owl:Class rdf:about="&hornet;#rnammer">
+        <rdfs:label>rnammer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#CovarianceModel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#tRNAscan -->
+
+    <owl:Class rdf:about="&hornet;#tRNAscan">
+        <rdfs:label>tRNAscan</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&hornet;#CovarianceModel"/>
+        <rdfs:comment>http://selab.janelia.org/software.html</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#hornetThing -->
+
+    <owl:Thing rdf:about="&hornet;#hornetThing">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#prodigal_run -->
+
+    <owl:NamedIndividual rdf:about="&hornet;#prodigal_run">
+        <rdf:type rdf:resource="&hornet;#Prodigal"/>
+        <rdf:type rdf:resource="&hornet;#Training"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.compbio.ornl.gov/owl/hornet#prodigal_train -->
+
+    <owl:NamedIndividual rdf:about="&hornet;#prodigal_train">
+        <rdf:type rdf:resource="&hornet;#Prodigal"/>
+        <rdf:type rdf:resource="&hornet;#Training"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+
